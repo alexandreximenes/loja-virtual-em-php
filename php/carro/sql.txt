@@ -1,0 +1,6 @@
+create database carro;
+use carro;
+
+create table carro(
+codigo int primary key auto_increment, placa varchar(6), renavam varchar(10), chassi varchar(20), marca varchar(20), modelo varchar(30), cor varchar(15), ano_fabricacao date, ano_modelo date, tipo_combustivel varchar(10), quilometragem decimal(10,2), valor_ipva decimal(10,2), descricao text);
+
