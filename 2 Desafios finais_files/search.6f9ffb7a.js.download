@@ -1,0 +1,1 @@
+!function(){var a=$("#headerBusca-form");$("#headerBusca-icon").on("click",function(b){b.preventDefault(),a.toggleClass("headerBusca-form--active"),$("#headerBusca-campoBusca").focus()})}();

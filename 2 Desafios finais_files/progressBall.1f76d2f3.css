@@ -1,0 +1,1 @@
+.progressBall{display:inline-block;vertical-align:middle;height:1em;width:1em;background-color:#F1F2F4;border-radius:100%}.progressBall_full{background-color:#67C064}.progressBall_half:before{content:'';display:block;height:1em;width:.5em;border-radius:1em 0 0 1em;background-color:#67C064}

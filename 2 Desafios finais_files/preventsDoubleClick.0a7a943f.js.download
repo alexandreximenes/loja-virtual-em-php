@@ -1,0 +1,1 @@
+function doesNothing(){return!1}function disableClickForAFewSeconds(a){$(a).click(doesNothing),setTimeout(function(){$(a).unbind("click",doesNothing)},5e3)}$(".button").on("click",function(a){disableClickForAFewSeconds(a.target)});

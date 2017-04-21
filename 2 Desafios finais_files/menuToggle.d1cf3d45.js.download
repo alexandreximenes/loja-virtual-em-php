@@ -1,0 +1,1 @@
+$(".header-submenuable").click(function(a){a.stopPropagation(),$(".header-submenuable").not(this).removeClass("header-submenuable-show"),$(this).toggleClass("header-submenuable-show")}),$("html").click(function(){$(".header-submenuable").removeClass("header-submenuable-show")}),$(".header-submenuable").mousedown(function(){return!1});
