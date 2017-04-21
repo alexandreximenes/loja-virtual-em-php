@@ -1,0 +1,21 @@
+.icon{
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+	float:left;
+}
+.foto{
+	margin: 10px;
+	border-radius: 20px 20px;
+	padding:5px;
+	border: 1px solid #DCDCDC;
+}
+.foto:hover{
+	 -ms-transform: rotate(-7deg); /* IE 9 */
+    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+    transform: rotate(-7deg);
+}
+
+.usuario{
+	width: 20px;
+}

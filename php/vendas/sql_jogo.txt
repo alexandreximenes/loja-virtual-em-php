@@ -1,0 +1,34 @@
+﻿CREATE TABLE IF NOT EXISTS `jogo` (
+  `codigo` int primary key auto_increment not null,
+  `nome` varchar(300) default null,
+`empresa` varchar(300) DEFAULT NULL,
+  `ano` year(4) DEFAULT NULL,
+  `modalidade` varchar(300) DEFAULT NULL,
+`valor` decimal(10,2) DEFAULT NULL,
+  `detalhes` text DEFAULT NULL
+);
+
+
+
+CREATE TABLE IF NOT EXISTS `cliente` (
+  `codigo` int primary key auto_increment not null,
+  `nome` varchar(300) default null,
+`nascimento` date DEFAULT NULL,
+  `endereco` varchar(200) DEFAULT NULL,
+  `numero` int DEFAULT NULL,
+`cep` varchar(10) DEFAULT NULL,
+  `cidade` varchar(100) DEFAULT NULL,
+    `estado` char(2) DEFAULT NULL,
+    login varchar(10) default null,
+    senha varchar(10) default null,
+    foto blob default null
+);
+
+
+create table pedido(codigo int primary key AUTO_INCREMENT);
+
+create table item_pedido(codigo int AUTO_INCREMENT primary key, pedido_codigo int references pedido(codigo) on DELETE CASCADE, jogo_codigo int REFERENCES jogo(codigo) on DELETE CASCADE);
+
+INSERT INTO `jogo` (`codigo`, `nome`, `empresa`, `ano`, `modalidade`, `valor`, `detalhes`) VALUES (NULL, 'medhal of honor', 'EA', '2001', 'Guerra', '150.00', 'Jogo de guerra, versao 3 '), (NULL, 'Call of duty', 'EA', '2000', 'Acao', '200.00', 'detalhes '), (NULL, 'Call of duty', 'EA', '2000', 'Acao', '200.00', 'detalhes alterado '), (NULL, 'Mass Effect 2', 'EA ', '2007', 'Acao', '120.00', 'Mass effect 2 '), (NULL, 'call of duty', 'Activity', '2000', 'Acao', '250.00', 'Call of duty 4 '), (NULL, 'medhal of honor', 'EA', '2000', 'Acao', '150.00', 'Medhal of honor 2 '), (NULL, 'medhal of honor 1', 'EA', '2000', 'Acao', '150.00', 'Medhal of honor 1 '), (NULL, 'Mario ', 'Nintendo', '1999', 'Comedia', '50.00', 'Mario cart '), (NULL, 'fldsjfl22 alterado ', 'fdlsfjdlsa alterado', '0000', 'Acao', '233.00', 'fdfdas ');
+
+
