@@ -32,7 +32,7 @@ require_once ("class/PHPMailerAutoload.php");
 	;
 	
 	if($login == "teste"){
-		$login = "xyymenes@gmail.com";
+		$login = "email@email.com";
 	}
 	if (count ( $_POST ) == 3) {
 		$nome = $_POST ["nome"];
@@ -56,11 +56,11 @@ require_once ("class/PHPMailerAutoload.php");
 	$mail->Port = 587;
 	$mail->SMTPSecure = 'tls';
 	$mail->SMTPAuth = true;
-	$mail->Username = "xyymenes@gmail.com";
-	$mail->Password = htmlentities ( "3nc4ypt10n#1" );
+	$mail->Username = "email@email.com";
+	$mail->Password = htmlentities ( "suasenha" );
 	
-	$mail->setFrom ( "xyymenes@gmail.com", "Loja online de Games" );
-	$mail->addAddress ( "xyymenes@gmail.com" );
+	$mail->setFrom ( "email@email.com", "Loja online de Games" );
+	$mail->addAddress ( "email@email.com" );
 	$mail->Subject = "Seu pedido foi realizado com sucesso!";
 	$mail->msgHTML ( "<html>{$mensagem}<br><br></html>" );
 	$mail->AltBody = "de: {$nome}\nemail:{$email}\nmensagem: {$mensagem}";
