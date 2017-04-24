@@ -4,14 +4,14 @@ include ("banco-cliente.php");
 
 verificaUsuario ();
 
-$cliente = "";
+$jogo = "";
 if (isset ( $_POST ['nome'] )) {
 	adicionaCliente ( $conexao, $_POST );
 }
 
 if (count ( $_POST ) > 0) {
 	if ($_POST ['editar']) {
-		$cliente = buscaCliente ( $conexao, $_POST ['editar'] );
+		$jogo = buscaCliente ( $conexao, $_POST ['editar'] );
 	}
 }
 
@@ -44,20 +44,20 @@ if (isset ( $_SESSION ['danger'] )) {
 					<table class="table">
 						<tr>
 							<td>Codigo</td>
-							<td><input class="form-control" value="<?=$cliente['codigo'] ?>"
+							<td><input class="form-control" value="<?=$jogo['codigo'] ?>"
 								type="number" name="codigo" required="required" maxlength="40"
 								placeholder="" readonly=readonly></td>
 						</tr>
 						<tr>
 							<td>Nome</td>
-							<td><input class="form-control" value="<?=$cliente['nome'] ?>"
+							<td><input class="form-control" value="<?=$jogo['nome'] ?>"
 								type="text" name="nome" required="required" maxlength="40"
 								placeholder="Nome" autofocus="true"></td>
 						</tr>
 						<tr>
 							<td>Data Nascimento</td>
 							<td><input class="form-control"
-								value="<?=$cliente['nascimento'] ?>" type="date"
+								value="<?=$jogo['nascimento'] ?>" type="date"
 								name="nascimento" required="required" maxlength="40"
 								placeholder="Data de nascimento"></td>
 						</tr>
@@ -65,25 +65,25 @@ if (isset ( $_SESSION ['danger'] )) {
 						<tr>
 							<td>Endreco</td>
 							<td><input class="form-control"
-								value="<?=$cliente['endereco'] ?>" type="text" name="endereco"
+								value="<?=$jogo['endereco'] ?>" type="text" name="endereco"
 								required="required" maxlength="40" placeholder="Endereco"></td>
 						</tr>
 
 						<tr>
 							<td>Numero</td>
-							<td><input class="form-control" value="<?=$cliente['numero'] ?>"
+							<td><input class="form-control" value="<?=$jogo['numero'] ?>"
 								type="number" name="numero" required="required" maxlength="40"
 								placeholder="numero"></td>
 						</tr>
 						<tr>
 							<td>CEP</td>
-							<td><input class="form-control" value="<?=$cliente['cep'] ?>"
+							<td><input class="form-control" value="<?=$jogo['cep'] ?>"
 								type="text" name="cep" required="required" maxlength="40"
 								placeholder="cep"></td>
 						</tr>
 						<tr>
 							<td>Cidade</td>
-							<td><input class="form-control" value="<?=$cliente['cidade'] ?>"
+							<td><input class="form-control" value="<?=$jogo['cidade'] ?>"
 								type="text" name="cidade" required="required" maxlength="40"
 								placeholder="cidade"></td>
 						</tr>
@@ -122,13 +122,13 @@ if (isset ( $_SESSION ['danger'] )) {
 						</tr>
 						<tr>
 							<td>Login</td>
-							<td><input class="form-control" value="<?=$cliente['login'] ?>"
+							<td><input class="form-control" value="<?=$jogo['login'] ?>"
 								type="text" name="login" required="required" maxlength="40"
 								placeholder="username"></td>
 						</tr>
 						<tr>
 							<td>Senha</td>
-							<td><input class="form-control" value="<?=$cliente['senha'] ?>"
+							<td><input class="form-control" value="<?=$jogo['senha'] ?>"
 								type="password" name="senha" required="required" maxlength="40"
 								placeholder="password"></td>
 						</tr>
@@ -136,7 +136,7 @@ if (isset ( $_SESSION ['danger'] )) {
 							<td>Foto</td>
 							<td><input class="form-control" type="file" name="imagem"
 								maxlength="40" placeholder="password"><img class="foto"
-								src="<?=$cliente['imagem'] ?>"></td>
+								src="<?=$jogo['imagem'] ?>"></td>
 						</tr>
 					</table>
 					<input type="submit" value="Salvar" class="btn btn-primary">

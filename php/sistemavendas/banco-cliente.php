@@ -13,7 +13,7 @@ function listaCliente($conexao) {
 function apagaCliente($conexao, $codigo){
 	$cod = addslashes($codigo);
 	$query = "delete from cliente where codigo = {$cod}";
-	//return mysqli_query($conexao, $query);
+	return mysqli_query($conexao, $query);
 }
 
 function adicionaCliente($conexao, $cliente){
@@ -62,7 +62,7 @@ function adicionaCliente($conexao, $cliente){
  	return mysqli_fetch_assoc($resultado);
  		
  	}
- 
+
  function validarUsuario($conexao, $usuario){
 	 
 	 $login = addslashes($usuario['login']);
@@ -80,5 +80,7 @@ function adicionaCliente($conexao, $cliente){
 	 	echo mysqli_error($conexao);
 	 	return false;
 	 }
+	 
+	 
 	 
  }

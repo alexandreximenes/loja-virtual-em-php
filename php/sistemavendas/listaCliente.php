@@ -21,7 +21,7 @@ if (count ( $_POST == 0 )) {
 }
 
 if (isset ( $_POST ['remover'] )) {
-	$cliente = apagaCliente ( $conexao, $_POST ['remover'] );
+	$jogo = apagaCliente ( $conexao, $_POST ['remover'] );
 } else {
 	echo mysqli_error ( $conexao );
 }
@@ -57,24 +57,24 @@ if (isset ( $_POST ['remover'] )) {
 						<th>ACOES</th>
 					</thead>
 			<?php
-			foreach ( $clientes as $cliente ) :
+			foreach ( $clientes as $jogo ) :
 				?>
 			<tr>
-						<td><?= $cliente['codigo'] ?></td>
-						<td><?= $cliente['nome'] ?></td>
-						<td><?= date('d-m-Y', strtotime($cliente['nascimento']))?></td>
-						<td><?= $cliente['endereco'] .", ". $cliente ['numero'] ." - ". $cliente ['cidade'].", ". $cliente ['estado'] ." - ". $cliente ['cep']?></td>
-						<td><?= $cliente['login'] ?></td>
-						<td><?php for($i=0; $i < strlen($cliente['senha']); $i++){echo "*";} ?></td>
+						<td><?= $jogo['codigo'] ?></td>
+						<td><?= $jogo['nome'] ?></td>
+						<td><?= date('d-m-Y', strtotime($jogo['nascimento']))?></td>
+						<td><?= $jogo['endereco'] .", ". $jogo ['numero'] ." - ". $jogo ['cidade'].", ". $jogo ['estado'] ." - ". $jogo ['cep']?></td>
+						<td><?= $jogo['login'] ?></td>
+						<td><?php for($i=0; $i < strlen($jogo['senha']); $i++){echo "*";} ?></td>
 						<td width="80">
 							<form action="cadastroCliente.php" method="POST">
 								<input type="hidden" name="editar"
-									value="<?= $cliente['codigo']?>"> <input class="icon"
+									value="<?= $jogo['codigo']?>"> <input class="icon"
 									type="image" src="img/icon/editar.jpg">
 							</form>
 							<form action="listaCliente.php" method="POST">
 								<input type="hidden" name="remover"
-									value="<?= $cliente['codigo']?>"> <input class="icon"
+									value="<?= $jogo['codigo']?>"> <input class="icon"
 									type="image" src="img/icon/remover.jpg">
 
 							</form>

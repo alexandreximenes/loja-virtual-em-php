@@ -15,9 +15,11 @@ if (isset ( $_SESSION ['danger'] )) {
 		
 	} 
 
-adicionaJogo($conexao, $_POST);
+if(count($_POST)>0){
+	adicionaJogo($conexao, $_POST);
+}
 
-$jogos = listaJogo($conexao);
+$carrinho = listaJogo($conexao);
 ?>
 
 <div class="container">
@@ -37,6 +39,7 @@ $jogos = listaJogo($conexao);
 		<table class="table table-striped">
 			<thead style="font-weight: bold;">
 				<th>CODIGO</th>
+				<th>IMAGEM</th>
 				<th>NOME</th>
 				<th>EMPRESA</th>
 				<th>ANO</th>
@@ -46,15 +49,16 @@ $jogos = listaJogo($conexao);
 				<th>ACOES</th>
 			</thead>
 			<?php 
-			foreach($jogos as $jogo) : ?>
+			foreach($carrinho as $jogo) : ?>
 			<tr>
 				<td><?= $jogo['codigo'] ?></td>
+				<td><img style="width: 35px; padding:0; margin:0;" src="<?=$jogo['imagem'] ?>"></td>
 				<td><?= $jogo['nome'] ?></td>
 				<td><?= $jogo['empresa'] ?></td>
 				<td><?= $jogo['ano'] ?></td>
 				<td><?= $jogo['modalidade']?></td>
 				<td><?= $jogo['valor'] ?></td>
-				<td><?= $jogo['detalhes'] ?></td>
+				<td><?= substr($jogo['detalhes'],0,25)?>...</td>
 				<td>
 				<a href="cadastrarJogo.php?codigo=<?= $jogo['codigo'] ?>"><figure><img class="icon" src="img/icon/editar.jpg"></figure></a>
 				    <a href="apagarJogo.php?codigo=<?= $jogo['codigo'] ?>"><figure><img class="icon" src="img/icon/remover	.jpg"></figure></a>
@@ -68,5 +72,6 @@ $jogos = listaJogo($conexao);
 	</div>
 	</div>
 	</div>
+</div>
 	
 <?php include("rodape.php");?>

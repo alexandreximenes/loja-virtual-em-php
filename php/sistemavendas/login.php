@@ -18,7 +18,7 @@ if (usuarioEstaLogado()) {
 		if ($usuario == null) {
 			$_SESSION ['danger'] = "Usuario ou senha incorreto!";
 		} else {
-			logaUsuario ( $usuario );
+			logaUsuario ( $usuario);
 			$_SESSION ['sucess'] = "Voce esta logado como ". $usuario['nome'];
 // 			header("Location: index.php");
 // 			die();
@@ -40,7 +40,7 @@ if (usuarioEstaLogado()) {
 						<?php
 						if (isset ( $_SESSION ['deslogado'] )) {
 							?>
-								<div class="alert alert-info">
+								<div class="alert alert-info alert-dismissable fade in">
 									<strong>Info! </strong> <?=$_SESSION ['deslogado']?>
 								</div>
 							<?php

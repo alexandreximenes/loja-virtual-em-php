@@ -1,14 +1,15 @@
 <?php include("cabecalho.php");
 include("banco-jogo.php");
 
-$jogos = listaJogo($conexao);
+$carrinho = listaJogo($conexao);
+
+shuffle($carrinho);
 
 ?>
 
 	<body>
 			<?php
-			foreach($jogos as $jogo) : 
-		
+			foreach($carrinho as $jogo) : 
 				include 'produtos-carrinho.php';
 			
 			endforeach;?>

@@ -1,21 +1,44 @@
-.icon{
+.icon {
 	width: 20px;
 	height: 20px;
 	margin-left: 10px;
-	float:left;
-}
-.foto{
-	margin: 10px;
-	border-radius: 20px 20px;
-	padding:5px;
-	border: 1px solid #DCDCDC;
-}
-.foto:hover{
-	 -ms-transform: rotate(-7deg); /* IE 9 */
-    -webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
-    transform: rotate(-7deg);
+	float: left;
 }
 
-.usuario{
-	width: 20px;
+.user {
+	width: 35px;
+	padding: 0;
+	margin: 0;
+	border-radius: 50%"
+}
+
+.foto {
+	margin: 10px;
+	border-radius: 20px 20px;
+	padding: 5px;
+	border: 1px solid #DCDCDC;
+}
+
+.foto:hover {
+	-ms-transform: rotate(-7deg); /* IE 9 */
+	-webkit-transform: rotate(-7deg); /* Chrome, Safari, Opera */
+	transform: rotate(-7deg);
+}
+input[type=text]:focus, input[type=text]:focus, 
+input[type=number]:focus, input[type=date]:focus, 
+input[type=password]:focus, 
+input[type=file]:focus,textarea, select {
+	border: 3px solid #555;
+}
+
+input[type=submit]{
+	-webkit-transition-duration: 0.5s; /* Safari */
+    transition-duration: 0.5s;
+	bakcground-color: white;
+	border: 1px solid #555;
+}
+
+.button:hover, a:hover {
+    background-color: #555; /* Green */
+    color: white;
 }

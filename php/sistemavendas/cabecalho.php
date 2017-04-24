@@ -39,7 +39,7 @@ session_start();
    
 
     <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top" style="height: 10px;">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -57,10 +57,12 @@ session_start();
               <li><a href="listaJogo.php">Listar jogo</a></li>
             <li><a href="cadastroCliente.php">Novo cliente</a></li>
             <li><a href="listaCliente.php">Listar cliente</a></li>
+                  <li><a href="telaCarrinho.php">Comprar</a></li>
+                   <li><a href="formulario-enviaemail.php">Contato</a></li>
                     <?php 
                     require_once 'usuario.php';
                     if(usuarioEstaLogado()):?>
-                    	  <li><a href="login.php?logout=<?=$_SESSION['usuario']['nome']?>"><strong>Deslogar</strong></a></li>
+                    	  <li><a href="login.php?logout="<?=$_SESSION['usuario']['nome']?>"><strong>Deslogar</strong></a></li>
                     <?php else: ?>
                     <li><a href="login.php">Login</a></li>
                     <?php endif; ?>
@@ -75,38 +77,51 @@ session_start();
                 <li><a href="cadastroCliente.php">Cadastrar cliente</a></li>
                   <li><a href="listaCliente.php">Listar cliente</a></li>
                      <li><a href="login.php">Login</a></li>
-                  <li><a href="contato.php">Contato</a></li>
+                  <li><a href="formulario-enviaemail.php">Contato</a></li>
                 </ul>
             </li>
           </ul>
           <ul class="nav navbar-nav navbar-right">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" accesskey="a">Acesso <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                    <li>
-                    	
-                    	      	<form action="index.php" method="post" navbar-form navbar-right" style="width: 265px;">
-			                          <div class="form-group">
-			                            <label style="text-indent: 4px;">Usuario:<br><input type="text" name="login" placeholder="Email" class="form-control" style="margin: 5px;"></label>
-			                          </div>
-			                          <div class="form-group">
-			                            <label style="text-indent: 4px;">Senha:<br><input type="password" name="senha" placeholder="Password" class="form-control" style="margin: 5px;"></label>
-			                          </div>
-			                          <button type="submit" class="btn btn-success" style="width: 215px;margin: 5px;">Sign in</button>
-		                        </form>
-                    	      	      <div class="form-group">
-                    	      	      	<img class="foto usuario" src="" />
-			                            <label style="text-indent: 4px;">Nome:<br>"</label>
-			                          </div>
-			                          <div class="form-group">
-			                            <label style="text-indent: 4px;">Login:<br>"</label>
-			                          </div>
-			                          <a href="#" class="btn btn-success" style="width: 215px;margin: 5px;">Logout</a>
+          
+           <li class="dropdown" >
+           	<a href="#" style="height: 50px;class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 
-                        
-                    </li>
+			<?php
+						$usuario = "";
+                    	if(usuarioEstaLogado()):
+                    		$usuario =  buscaUsuario2($conexao, $_SESSION['usuario']['codigo']);?>
+                    		<img style="width: 35px; padding:0; margin:0; border-radius: 50%" src="<?=$usuario['imagem'] ?>">
+                    	<?php 	echo $usuario['nome']; ?>
+			 <span class="caret"></span></a>
+               	
+              <ul class="dropdown-menu">
+                    	<li><a href="login.php?logout="<?=$usuario['nome']?>"><strong>Logout</strong></a></li>
+                    	<?=$usuario['login']?>
+              </ul>
+             
+             <?php else: ?>
+              Login
+              <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                     <li>
+	                   	<div class="form-group">
+	                   		<form action="index.php" method="post" navbar-form navbar-right" style="width: 235px;">
+				                          <div class="form-group">
+				                            <label style="text-indent: 4px;">Usuario:<br><input type="text" name="login" placeholder="Email" class="form-control" style="margin-left: 5px;"></label>
+				                          </div>
+				                          <div class="form-group">
+				                            <label style="text-indent: 4px;">Senha:<br><input type="password" name="senha" placeholder="Password" class="form-control" style="margin-left: 5px;"></label>
+				                          </div>
+				                          <button type="submit" class="btn btn-success" style="width: 215px;margin: 5px;">Sign in</button>
+				         </form>
+	                    	<?php endif; ?>      	
+	    
+	              </li>
+
               </ul>
             </li>
+          
+         
           </ul>
         </div><!--/.nav-collapse -->
       </div>
