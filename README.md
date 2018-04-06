@@ -57,5 +57,5 @@ Site no hostinger <a href="http://alexandreximenes.esy.es/"> http://alexandrexim
 </p>
 <p>
     Tela - Pedido finalizado, incluido pedido no sistema, enviado email dos detalhes da compra ao cliente
-    <img src="https://github.com/alexandreximenes/loja-virtual-em-php/blob/master/sistemavendas/print-telas/6.PNG" alt="Pedido finalizado, enviado email com os dados do pedido">
+    <img src="https://github.com/alexandreximenes/loja-virtual-em-php/blob/master/sistemavendas/print-telas/13.PNG" alt="Pedido finalizado, enviado email com os dados do pedido">
 </p>
