@@ -53,9 +53,11 @@ Site no hostinger <a href="http://alexandreximenes.esy.es/"> http://alexandrexim
 </p>
 <p>
     Tela - Carrinho de compras com 2 itens 
+    Pedido de exemplo : 28
     <img src="https://github.com/alexandreximenes/loja-virtual-em-php/blob/master/sistemavendas/print-telas/12.PNG" alt="Carrinho de compras com 2 compras até o momento">
 </p>
 <p>
     Tela - Pedido finalizado, incluido pedido no sistema, enviado email dos detalhes da compra ao cliente
+    Pedido de exemplo : 68
     <img src="https://github.com/alexandreximenes/loja-virtual-em-php/blob/master/sistemavendas/print-telas/13.PNG" alt="Pedido finalizado, enviado email com os dados do pedido">
 </p>
